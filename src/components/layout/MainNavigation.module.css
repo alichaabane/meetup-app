@@ -22,6 +22,17 @@
       font-size: 2rem;
   }
   
+  @media  (max-width: 566px) {
+    .header ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+      display: table-cell;
+      align-items: baseline;
+    }
+  }
+
+  @media  (min-width: 567px) {
   .header ul {
     list-style: none;
     margin: 0;
@@ -29,6 +40,8 @@
     display: inline-flex;
     align-items: baseline;
   }
+}
+ 
   
   .header li {
     margin-left: 3rem;
