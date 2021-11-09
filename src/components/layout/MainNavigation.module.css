@@ -1,0 +1,60 @@
+.header {
+    width: 100%;
+    height: 5rem;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #77002e;
+    padding: 0;
+    color: white;
+  }
+
+
+  
+  .logo {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+  }
+  .header span {
+      margin-left: 15px !important;
+      font-size: 2rem;
+  }
+  
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  
+  .header li {
+    margin-left: 3rem;
+  }
+  
+  * {
+    outline: none;
+  }
+  
+  .header a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fcb8d2;
+  }
+  
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    color: white;
+  }
+  
+  .badge {
+    background-color: #cc2062;
+    color: white;
+    border-radius: 12px;
+    padding: 0 1rem;
+    margin-left: 0.5rem;
+  }
+  
