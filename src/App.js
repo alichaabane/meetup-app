@@ -1,20 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import MainNavigation from "./components/layout/MainNavigation";
+import Layout from "./components/layout/Layout";
 import AllMeetups from "./pages/AllMeetups";
 import Favorites from "./pages/Favorites";
 import Meetups from "./pages/Meetups";
 function App() {
-  // upgrade to react-router-dom v6
+  // update:  react-router-dom v6
 
   return (
-    <span>
-      <MainNavigation />
+    <Layout>
       <Routes>
         <Route path="/" element={<AllMeetups />}></Route>
         <Route path="/meetups" element={<Meetups />}></Route>
         <Route path="/favorites" element={<Favorites />}></Route>
       </Routes>
-      </span>
+      </Layout>
   );
 }
 
