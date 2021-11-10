@@ -19,7 +19,7 @@
   }
   .header span {
       margin-left: 15px !important;
-      font-size: 2rem;
+      font-size: 1.6rem;
   }
   
   @media  (max-width: 566px) {
@@ -27,8 +27,13 @@
       list-style: none;
       margin: 0;
       padding: 10px;
-      display: table-cell;
+      display: flex;
       align-items: baseline;
+    }
+    .header a {
+      text-decoration: none;
+      font-size: 0.7rem;
+      color: #fcb8d2;
     }
   }
 
@@ -39,6 +44,12 @@
     padding: 10px;
     display: inline-flex;
     align-items: baseline;
+  }
+
+  .header a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fcb8d2;
   }
 }
  
@@ -51,11 +62,7 @@
     outline: none;
   }
   
-  .header a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    color: #fcb8d2;
-  }
+
   
   .header a:hover,
   .header a:active,

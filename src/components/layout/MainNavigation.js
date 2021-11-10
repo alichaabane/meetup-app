@@ -4,11 +4,11 @@ function MainNavigation() {
 
     return (
            <header className={classes.header}>
-               <span>React Meetups </span>
+               <span> Meetups App </span>
                <nav>
                    <ul>
                        <li><Link to="/">All Meetups</Link></li>
-                       <li><Link to="/meetups">Meetups</Link></li>
+                       <li><Link to="/new-meetup">Add New Meetup</Link></li>
                        <li><Link to="/favorites">Favorites</Link></li>
                    </ul>
                </nav>
