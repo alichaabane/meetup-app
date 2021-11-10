@@ -3,6 +3,7 @@ import Layout from "./components/layout/Layout";
 import AllMeetups from "./pages/AllMeetups";
 import Favorites from "./pages/Favorites";
 import Meetups from "./pages/Meetups";
+
 function App() {
   // update:  react-router-dom v6
 
