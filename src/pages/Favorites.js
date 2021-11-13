@@ -1,12 +1,13 @@
 
-function Favorites() {
+function FavoritesPage() {
 
     return (
       <div>
-          <h2>Favorites Page</h2>
+          <h1>Favorites Page</h1>
+          <h2><b>This section is under construction ⚠️</b></h2>
       </div>
     );
   }
   
-  export default Favorites;
+  export default FavoritesPage;
   

@@ -1,34 +1,52 @@
-import MeetupList from "../components/meetups/MeetupList";
+import MeetupList from '../components/meetups/MeetupList'
+import {useState, useEffect} from 'react';
 
-const DUMMY_DATA = [
-  {
-    id: 'm1',
-    title: 'This is a first meetup',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-    address: 'Meetupstreet 5, 12345 Meetup City',
-    description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
-  },
-  {
-    id: 'm2',
-    title: 'This is a second meetup',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-    address: 'Meetupstreet 5, 12345 Meetup City',
-    description:
-      'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
-  },
-];
+function AllMeetupsPage() {
+  // Probleme : infinite loop bc each changes of state the component content rerendered
+  // solution => useEffect() is a hook that allows you to run some code under certain conditions
+  const [isLoading, setIsLoading] = useState(true); 
+  const [meetupsData, setMeetupsData] = useState([]);
 
-function AllMeetups() {
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(
+      "https://meetups-project-86e41-default-rtdb.firebaseio.com/meetups.json"
+    )
+      .then((response) => {
+          return  response.json();
+      }).then(data => {
+        const meetups = [];
+        for (const key in data) {
+          const meetup = {
+            id:  key,
+            ...data[key]
+          };
+          meetups.push(meetup);
+        }
+        const sortedMeetups = meetups.slice().sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt)  ? 1 : -1);
+        setMeetupsData(sortedMeetups);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log("error occured when fetching meetups data. ", err);
+      });
 
+  }, []);
+
+      if(isLoading) {
+        return  (
+          <section>
+            <p>Loading ... </p>
+          </section>
+        );
+      }
+  
   return (
     <section>
-        <h2>All Meetups</h2>
-        <MeetupList meetups={DUMMY_DATA} />
+        <h1>All Meetups</h1>
+        <MeetupList meetups={meetupsData} />
     </section>
   );
 }
 
-export default AllMeetups;
+export default AllMeetupsPage;

@@ -18,6 +18,9 @@
     font-weight: bold;
   }
 
+  span {
+    pointer-events: none;
+  }
   
   @media  (max-width: 400px) {
     .header span {
