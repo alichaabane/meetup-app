@@ -4,7 +4,7 @@ function MainNavigation() {
 
     return (
            <header className={classes.header}>
-               <span> Meetups App </span>
+               <span> 𝑀𝑒𝑒𝓉𝓊𝓅𝓈 𝒜𝓅𝓅 </span>
                <nav>
                    <ul>
                        <li><Link to="/">All Meetups</Link></li>
