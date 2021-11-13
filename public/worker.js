@@ -1,11 +1,12 @@
 var CACHE_NAME = 'pwa-meetups';
 var urlsToCache = [
   '/',
-  '/completed'
+  '/new-meetup',
+  '/favorites'
 ];
 
 // Install a service worker
-self.addEventListener('install', event => {
+window.addEventListener('install', event => {
   // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -16,8 +17,8 @@ self.addEventListener('install', event => {
   );
 });
 
-// Cache and return requests
-self.addEventListener('fetch', event => {
+// // Cache and return requests
+window.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
@@ -32,7 +33,7 @@ self.addEventListener('fetch', event => {
 });
 
 // Update a service worker
-self.addEventListener('activate', event => {
+window.addEventListener('activate', event => {
   var cacheWhitelist = ['pwa-task-manager'];
   event.waitUntil(
     caches.keys().then(cacheNames => {

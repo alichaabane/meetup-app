@@ -6,7 +6,6 @@ import NewMeetup from "./pages/NewMeetup";
 
 function App() {
   // update:  react-router-dom v6
-
   return (
     <Layout>
       <Routes>
