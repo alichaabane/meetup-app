@@ -2,7 +2,8 @@ var CACHE_NAME = 'pwa-meetups';
 var urlsToCache = [
   '/',
   '/new-meetup',
-  '/favorites'
+  '/favorites',
+  'https://meetups-project-86e41-default-rtdb.firebaseio.com/meetups.json'
 ];
 
 // Install a service worker

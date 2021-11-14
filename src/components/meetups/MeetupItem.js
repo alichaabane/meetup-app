@@ -2,14 +2,19 @@ import Card from '../shared/Card';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
+  const goToGoogleMaps = () => {
+    window.open("https://www.google.com/maps/search/?api=1&query="+ props.title );
+  };
   return (
+    
     <Card>
+      <ul>
     <li className={classes.item}>
-      <div className={classes.image}>
+      <div className={classes.image} onClick={goToGoogleMaps}>
         <img src={props.image} alt={props.title} />
       </div>
       <div className={classes.content}>
-        <h3>{props.title}</h3>
+        <h2>{props.title}</h2>
         <address>{props.address}</address>
         <p>{props.description}</p>
       </div>
@@ -17,6 +22,7 @@ function MeetupItem(props) {
         <button>To Favorites</button>
       </div>
     </li>
+    </ul>
     </Card>
   );
 }
