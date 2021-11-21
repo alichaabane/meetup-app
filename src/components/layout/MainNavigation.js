@@ -6,15 +6,15 @@ function MainNavigation() {
     const favoriteContext = useContext(FavoritesContext);
     return (
            <header className={classes.header}>
-               <Link to="/"><span>Meetups App </span></Link>
+               <Link to="/"><span className={classes.header}>Meetups App </span></Link>
                <nav className={classes.nav}>
                    <ul>
                        <li  className={classes.li}><Link to="/">All Meetups</Link></li>
                        <li  className={classes.li}><Link to="/new-meetup">Add New Meetup</Link></li>
                        <li  className={classes.li}><Link to="/favorites">Favorites
                        <span className={classes.badge}>
-                {favoriteContext.totalFavorites}
-              </span>
+                        {favoriteContext.totalFavorites}
+                       </span>
                        </Link></li>
                    </ul>
                </nav>
