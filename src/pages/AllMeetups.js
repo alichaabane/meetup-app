@@ -1,5 +1,6 @@
 import MeetupList from '../components/meetups/MeetupList'
 import {useState, useEffect} from 'react';
+import axios from 'axios';
 
 function AllMeetupsPage() {
   // Probleme : infinite loop bc each changes of state the component content rerendered
@@ -9,11 +10,11 @@ function AllMeetupsPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(
-      "https://meetups-project-86e41-default-rtdb.firebaseio.com/meetups.json"
+    axios.get(
+      `https://meetups-project-86e41-default-rtdb.firebaseio.com/meetups.json`
     )
       .then((response) => {
-          return  response.json();
+          return  response.data;
       }).then(data => {
         const meetups = [];
         for (const key in data) {

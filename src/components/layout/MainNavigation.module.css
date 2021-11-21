@@ -11,6 +11,10 @@
     color: white;
   }
 
+  .nav {
+    margin-right: 6vh !important;
+  }
+
   
   .logo {
     font-size: 2rem;
@@ -55,7 +59,7 @@
     }
     .header a {
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.5rem;
       color: #fcb8d2;
     }
   }
